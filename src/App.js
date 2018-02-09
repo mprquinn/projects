@@ -7,7 +7,7 @@ class App extends Component {
     super();
 
     this.state = {
-      loaded: false,
+      loaded: 'loading',
       projects: [
         {
           title: 'Project One',
@@ -49,7 +49,18 @@ class App extends Component {
     }
   }
   loadImages() {
-    console.log('loading images');
+    const projects = this.state.projects;
+    const baseUrl = '//unsplash.it/500x500?image=';
+    projects.forEach((project, i) => {
+      let image = new Image();
+      const url = `${baseUrl}${project.imageUrl}`;
+      image.src = url;
+      if (i === projects.length - 1) {
+        this.setState({
+          loaded: 'loaded'
+        });
+      }
+    });
   }
   componentWillMount() {
     this.loadImages();
@@ -62,7 +73,7 @@ class App extends Component {
   render() {
     const currSlide = this.state.projects[this.state.currentSlide];
     return (
-      <div className="projects">
+      <div className={`projects projects--${this.state.loaded}`} style={{backgroundImage: `url(https://unsplash.it/500x500?image=${currSlide.imageUrl})` }}>
         <Project title={currSlide.title} image={currSlide.imageUrl} description={currSlide.description} />
       </div>
     );
