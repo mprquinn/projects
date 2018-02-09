@@ -7,7 +7,10 @@ class App extends Component {
     super();
 
     this.state = {
-      loaded: false,
+      loaded: 'loading',
+      animating: false,
+      animateDir: '',
+      animateDuration: 600,
       projects: [
         {
           title: 'Project One',
@@ -23,21 +26,47 @@ class App extends Component {
       currentSlide: 0
     }
   }
+  fireAnims(duration) {
+    // go
+    this.setState({
+      animating: true,
+      animateDir: 'out'
+    });
+    // halfway
+    window.setTimeout(() => {
+      this.setState({
+        animateDir: 'in'
+      });
+    }, duration/2);
+    // done
+    window.setTimeout(() => {
+      this.setState({
+        animating: false
+      });
+    }, duration);
+  }
   changeSlide(dir) {
-    console.log(dir);
     const currentSlide = this.state.currentSlide;
     const projects = this.state.projects;
+
     if (dir === 'down') {
       if (currentSlide < projects.length-1) {
-        this.setState({
-          currentSlide: currentSlide+1
-        });
+        this.fireAnims(1200);
+        window.setTimeout(() => {
+          this.setState({
+            currentSlide: currentSlide+1,
+          });
+        }, 595);
+        
       }
     } else {
       if (currentSlide >  0) {
-        this.setState({
-          currentSlide: currentSlide-1
-        });
+        this.fireAnims(1200);
+        window.setTimeout(() => {
+          this.setState({
+            currentSlide: currentSlide-1,
+          });
+        }, 595);
       }
     }
   }
@@ -49,21 +78,32 @@ class App extends Component {
     }
   }
   loadImages() {
-    console.log('loading images');
+    const projects = this.state.projects;
+    const baseUrl = '//unsplash.it/500x500?image=';
+    projects.forEach((project, i) => {
+      let image = new Image();
+      const url = `${baseUrl}${project.imageUrl}`;
+      image.src = url;
+      if (i === projects.length - 1) {
+        this.setState({
+          loaded: 'loaded'
+        });
+      }
+    });
   }
   componentWillMount() {
     this.loadImages();
   }
   componentDidMount() {
     document.addEventListener('mousewheel', (e) => {
-      this.changeSlide(this.determineDir(e.deltaY));
+      this.changeSlide(this.determineDir(e.deltaY));      
     });
   }
   render() {
     const currSlide = this.state.projects[this.state.currentSlide];
     return (
-      <div className="projects">
-        <Project title={currSlide.title} image={currSlide.imageUrl} description={currSlide.description} />
+      <div className={`projects projects--${this.state.loaded}`} style={{backgroundImage: `url(https://unsplash.it/500x500?image=${currSlide.imageUrl})` }}>
+        <Project title={currSlide.title} image={currSlide.imageUrl} description={currSlide.description} animClass={this.state.animateDir} animating={this.state.animating} />
       </div>
     );
   }
