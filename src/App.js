@@ -22,6 +22,11 @@ class App extends Component {
           title: "Project Two",
           imageUrl: "project2.jpg",
           description: "This is the second project. It has a different project."
+        },
+        {
+          title: "Another Project",
+          imageUrl: "project3.jpg",
+          description: "Blah blah blah words go here"
         }
       ],
       currentSlide: 0
