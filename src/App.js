@@ -96,7 +96,9 @@ class App extends Component {
   }
   componentDidMount() {
     document.addEventListener("mousewheel", e => {
-      this.changeSlide(this.determineDir(e.deltaY));
+      if (!this.state.animating) {
+        this.changeSlide(this.determineDir(e.deltaY));
+      }
     });
   }
   render() {
