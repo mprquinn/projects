@@ -7,6 +7,7 @@ class App extends Component {
     super();
 
     this.state = {
+      loaded: false,
       projects: [
         {
           title: 'Project One',
@@ -46,6 +47,12 @@ class App extends Component {
     } else {
       return 'up';
     }
+  }
+  loadImages() {
+    console.log('loading images');
+  }
+  componentWillMount() {
+    this.loadImages();
   }
   componentDidMount() {
     document.addEventListener('mousewheel', (e) => {
