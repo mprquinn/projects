@@ -26,21 +26,47 @@ class App extends Component {
       currentSlide: 0
     }
   }
+  fireAnims(duration) {
+    // go
+    this.setState({
+      animating: true,
+      animateDir: 'out'
+    });
+    // halfway
+    window.setTimeout(() => {
+      this.setState({
+        animateDir: 'in'
+      });
+    }, duration/2);
+    // done
+    window.setTimeout(() => {
+      this.setState({
+        animating: false
+      });
+    }, duration);
+  }
   changeSlide(dir) {
-    console.log(dir);
     const currentSlide = this.state.currentSlide;
     const projects = this.state.projects;
+
     if (dir === 'down') {
       if (currentSlide < projects.length-1) {
-        this.setState({
-          currentSlide: currentSlide+1
-        });
+        this.fireAnims(1200);
+        window.setTimeout(() => {
+          this.setState({
+            currentSlide: currentSlide+1,
+          });
+        }, 595);
+        
       }
     } else {
       if (currentSlide >  0) {
-        this.setState({
-          currentSlide: currentSlide-1
-        });
+        this.fireAnims(1200);
+        window.setTimeout(() => {
+          this.setState({
+            currentSlide: currentSlide-1,
+          });
+        }, 595);
       }
     }
   }
@@ -70,22 +96,7 @@ class App extends Component {
   }
   componentDidMount() {
     document.addEventListener('mousewheel', (e) => {
-      this.setState({
-        animating: true,
-        animateDir: 'out'
-      });
-      window.setTimeout(() => {
-        this.changeSlide(this.determineDir(e.deltaY));
-        this.setState({
-          animateDir: 'in'
-        });
-      }, 300);
-      window.setTimeout(() => {
-        this.setState({
-          animating: false
-        });
-      }, 600);
-      
+      this.changeSlide(this.determineDir(e.deltaY));      
     });
   }
   render() {
