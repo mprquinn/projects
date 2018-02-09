@@ -8,6 +8,9 @@ class App extends Component {
 
     this.state = {
       loaded: 'loading',
+      animating: false,
+      animateDir: '',
+      animateDuration: 600,
       projects: [
         {
           title: 'Project One',
@@ -67,14 +70,29 @@ class App extends Component {
   }
   componentDidMount() {
     document.addEventListener('mousewheel', (e) => {
-      this.changeSlide(this.determineDir(e.deltaY));
+      this.setState({
+        animating: true,
+        animateDir: 'out'
+      });
+      window.setTimeout(() => {
+        this.changeSlide(this.determineDir(e.deltaY));
+        this.setState({
+          animateDir: 'in'
+        });
+      }, 300);
+      window.setTimeout(() => {
+        this.setState({
+          animating: false
+        });
+      }, 600);
+      
     });
   }
   render() {
     const currSlide = this.state.projects[this.state.currentSlide];
     return (
       <div className={`projects projects--${this.state.loaded}`} style={{backgroundImage: `url(https://unsplash.it/500x500?image=${currSlide.imageUrl})` }}>
-        <Project title={currSlide.title} image={currSlide.imageUrl} description={currSlide.description} />
+        <Project title={currSlide.title} image={currSlide.imageUrl} description={currSlide.description} animClass={this.state.animateDir} animating={this.state.animating} />
       </div>
     );
   }
