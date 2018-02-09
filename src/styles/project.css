@@ -50,10 +50,27 @@ body::after {
   z-index: 2;
 }
 
+@media screen and (max-width: 700px) {
+  .project {
+    height: 60vh;
+    flex-direction: column;
+  }
+}
+
 .project__image-wrap {
   position: relative;
   flex: 1;
   background: #ffffff;
+}
+
+@media screen and (max-width: 700px) {
+  .project__image-wrap {
+    height: 50vh;
+    overflow: hidden;
+  }
+  .project__image {
+    object-fit: cover;
+  }
 }
 
 .project__image-wrap::after {
@@ -93,6 +110,12 @@ body::after {
   align-items: center;
   padding: 20px;
   overflow: hidden;
+}
+
+@media screen and (max-width: 700px) {
+  .project__details {
+    
+  }
 }
 
 .project__details::after {
