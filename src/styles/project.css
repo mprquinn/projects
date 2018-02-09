@@ -85,23 +85,36 @@ body::after {
 }
 
 .project__details {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
   padding: 20px;
-  opacity: 1;
+  overflow: hidden;
+}
+
+.project__details::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: #ffffff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(-120%) skewX(20deg);
   transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
-.project--out .project__details {
-  opacity: 0;
+.project--out .project__details::after {
+  transform: translateY(0%);
 }
 
-.project--in .project__details {
-  opacity: 1;
+.project--in .project__details::after {
+  transform: translateY(-120%);
 }
 
 .project__title {

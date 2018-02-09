@@ -56,7 +56,7 @@ class App extends Component {
           this.setState({
             currentSlide: currentSlide+1,
           });
-        }, 595);
+        }, 610);
         
       }
     } else {
@@ -66,7 +66,7 @@ class App extends Component {
           this.setState({
             currentSlide: currentSlide-1,
           });
-        }, 595);
+        }, 610);
       }
     }
   }
