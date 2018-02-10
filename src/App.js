@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LandingScreen from './components/LandingScreen';
 import Project from "./components/Project";
 import "./styles/project.css";
 
@@ -102,7 +103,7 @@ class App extends Component {
   componentDidMount() {
     document.addEventListener("mousewheel", e => {
       if (!this.state.animating) {
-        this.changeSlide(this.determineDir(e.deltaY));
+        // this.changeSlide(this.determineDir(e.deltaY));
       }
     });
   }
@@ -110,17 +111,20 @@ class App extends Component {
     const currSlide = this.state.projects[this.state.currentSlide];
     const currentImage = require(`./${currSlide.imageUrl}`);
     return (
-      <div
-        className={`projects projects--${this.state.loaded}`}
-        style={{ backgroundImage: `url(${currentImage})` }}
-      >
-        <Project
-          title={currSlide.title}
-          image={currSlide.imageUrl}
-          description={currSlide.description}
-          animClass={this.state.animateDir}
-          animating={this.state.animating}
-        />
+      <div>
+        <LandingScreen />
+        <div
+          className={`projects projects--${this.state.loaded}`}
+          style={{ backgroundImage: `url(${currentImage})` }}
+        >
+          <Project
+            title={currSlide.title}
+            image={currSlide.imageUrl}
+            description={currSlide.description}
+            animClass={this.state.animateDir}
+            animating={this.state.animating}
+          />
+        </div>
       </div>
     );
   }
