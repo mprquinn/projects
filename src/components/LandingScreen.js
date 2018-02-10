@@ -56,13 +56,22 @@ class LandingScreen extends Component {
     return (
       <div className="landing">
         
+        <div className="landing__decorative"></div>
         <div className="landing__card">
-          <h1 className="landing__title">
-              Mike Quinn
-          </h1>
-          <h2 className="landing__subtitle">
-              Front-end Developer, Calgary AB
-          </h2>
+          
+          <div className="landing__card__image">
+            <img src={require('../intro-bg.jpg')} />
+          </div>
+
+          <div className="landing__card__text">
+            <h1 className="landing__title">
+                Mike Quinn
+            </h1>
+            <h2 className="landing__subtitle">
+                Front-end Developer, Calgary AB
+            </h2>
+          </div>
+          
         </div>
       </div>
     );
