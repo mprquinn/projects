@@ -30,21 +30,10 @@ body::after {
   left: 0;
   content: "";
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1;
-  backdrop-filter: saturate(80%) blur(2px);
-  /* backdrop-filter: saturate(80%) blur(5px); */
-}
-
-.projects::after {
-  content: '';
-  position: fixed;
-  display: block;
-  width: 49%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: #ffffff;
+  /* backdrop-filter: saturate(80%) blur(2px); */
+  backdrop-filter: saturate(80%) blur(5px);
 }
 
 @media screen and (max-width: 700px) {
