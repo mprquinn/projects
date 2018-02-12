@@ -23,6 +23,12 @@ class LandingScreen extends Component {
           <div className="line"></div>
         </div>
 
+        <ul className="landing__nav">
+          <li className="landing__nav__item"><a href="">Item 1</a></li>
+          <li className="landing__nav__item"><a href="">Item 2</a></li>
+          <li className="landing__nav__item"><a href="">Item 3</a></li>
+        </ul>
+
         <h1 className="landing__section">.01</h1>
 
         <div className="landing__card">

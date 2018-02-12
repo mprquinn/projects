@@ -20,6 +20,34 @@
   opacity: 0.6;
 }
 
+.landing__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 16.666vw;
+  position: relative;
+  grid-column: 3 / -1;
+  grid-row: 1 / 2;
+  background: #333333;
+  z-index: 2;
+}
+
+.landing__nav__item {
+  display: inline-block;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 800;
+  margin: 0 1em 1em;
+}
+
+.landing__nav__item a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .landing__section {
   position: relative;
   font-family: "Alegreya", serif;
