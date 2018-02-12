@@ -33,10 +33,10 @@ class LandingScreen extends Component {
 
           <div className="landing__card__text">
             <h1 className="landing__card__title">
-                Mike Quinn
+                Slide Title
             </h1>
             <h2 className="landing__card__subtitle">
-                Developer
+                Subtitle
             </h2>
           </div>
           
