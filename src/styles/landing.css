@@ -21,7 +21,6 @@
 }
 
 .landing__section {
-  display: grid;
   position: relative;
   font-family: "Alegreya", serif;
   position: relative;
@@ -37,6 +36,7 @@
 
 .landing__section::after {
   content: "";
+  display: block;
   width: 16.666vw;
   position: absolute;
   left: -100%;
