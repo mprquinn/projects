@@ -133,21 +133,21 @@
 }
 .landing__card__subtitle::before {
   content: "";
-  width: 25%;
+  width: 55%;
   height: 2px;
   background: #1d1d1d;
   position: absolute;
   top: 50%;
-  left: -45%;
+  left: -80%;
 }
 .landing__card__subtitle::after {
   content: "";
-  width: 25%;
+  width: 55%;
   height: 2px;
   background: #1d1d1d;
   position: absolute;
   top: 50%;
-  right: -45%;
+  right: -80%;
 }
 .landing__card__image {
   position: absolute;
