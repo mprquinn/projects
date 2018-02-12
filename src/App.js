@@ -31,7 +31,9 @@ class App extends Component {
           description: "Blah blah blah words go here"
         }
       ],
-      currentSlide: 0
+      currentSlide: 0,
+      currentPage: 'landing',
+      pageAnimation: ''
     };
   }
   fireAnims(duration) {
@@ -98,6 +100,23 @@ class App extends Component {
       }
     });
   }
+  navigate(e) {
+    const destination = e.target.getAttribute('href');
+    this.setState({
+      pageAnimation: 'site-wrap--animated site-wrap--out'
+    })
+    window.setTimeout(() => {
+      this.setState({
+        currentPage: destination,
+        pageAnimation: 'site-wrap--animated site-wrap--in'
+      });
+    }, 300);
+    window.setTimeout(() => {
+      this.setState({
+        pageAnimation: ''
+      });
+    }, 600);
+  }
   componentWillMount() {
     // this.loadImages();
   }
@@ -112,8 +131,11 @@ class App extends Component {
     const currSlide = this.state.projects[this.state.currentSlide];
     const currentImage = require(`./${currSlide.imageUrl}`);
     return (
-      <div>
-        <LandingScreen />
+      <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentPage}`}>
+        <LandingScreen navigate={(e) => {
+          this.navigate(e);
+          }
+        }/>
         <div
           className={`projects projects--${this.state.loaded}`}
           style={{ backgroundImage: `url(${currentImage})` }}
