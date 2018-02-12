@@ -6,7 +6,7 @@ const preloadImages = url => new Promise((resolve) => {
   const img = new Image();
   img.addEventListener('load', resolve);
   img.src = url;
-  console.log(img);
+  resolve();
 })
 const loadImages = urls => Promise.all(urls.map(preloadImages))
 
@@ -18,7 +18,12 @@ class Preload extends React.Component {
     this.state = { loaded: false }
   }
   componentDidMount() {
-    loadImages(this.urls).then(() => this.setState({ loaded: true }))
+    loadImages(this.urls).then(() => {
+      this.setState(
+        { loaded: true }
+      );
+      console.log('test');
+    })
   }
   render() {
     return this.state.loaded
