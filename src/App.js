@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LandingScreen from './components/LandingScreen';
 import Project from "./components/Project";
+import "./styles/reset.css";
 import "./styles/project.css";
 
 class App extends Component {
