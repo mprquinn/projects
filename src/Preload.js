@@ -1,14 +1,19 @@
-const App = require('./App')
-const LoadingScreen = require('./LoadingScreen')
-const preloadImage = url => new Promise((resolve) => { 
-  const img = new Image()
-  img.addEventListener('load', resolve)
-  img.src = url
+import React, { Component } from "react";
+import App from './App';
+import LoadingScreen from './components/LoadingScreen';
+
+const preloadImages = url => new Promise((resolve) => { 
+  const img = new Image();
+  img.addEventListener('load', resolve);
+  img.src = url;
+  console.log(img);
 })
 const loadImages = urls => Promise.all(urls.map(preloadImages))
 
-class Preloader extends React.Component {
+class Preload extends React.Component {
   constructor(props) {
+    super();
+
     this.urls = props.urls
     this.state = { loaded: false }
   }
@@ -22,4 +27,4 @@ class Preloader extends React.Component {
   }
 }
 
-module.exports = Preloader
+export default Preload
