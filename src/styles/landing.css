@@ -29,23 +29,29 @@
   position: relative;
   grid-column: 3 / -1;
   grid-row: 1 / 2;
-  background: #333333;
   z-index: 2;
 }
 
 .landing__nav__item {
   display: inline-block;
+  font-size: 1em;
   line-height: 1em;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: 'Alegreya Sans', sans-serif;
   font-weight: 800;
-  margin: 0 1em 1em;
+  width: 8.333vw;
+  margin-bottom: 1em;
+  text-align: right;
 }
 
 .landing__nav__item a {
-  color: #ffffff;
+  color: #1d1d1d;
   text-decoration: none;
+}
+
+.landing__nav__item--active a {
+  border-bottom: 3px solid #1d1d1d;
 }
 
 .landing__section {

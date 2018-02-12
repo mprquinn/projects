@@ -24,7 +24,7 @@ class LandingScreen extends Component {
         </div>
 
         <ul className="landing__nav">
-          <li className="landing__nav__item"><a href="">Item 1</a></li>
+          <li className="landing__nav__item landing__nav__item--active"><a href="">Item 1</a></li>
           <li className="landing__nav__item"><a href="">Item 2</a></li>
           <li className="landing__nav__item"><a href="">Item 3</a></li>
         </ul>
