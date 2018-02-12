@@ -1,0 +1,24 @@
+.section {
+  position: relative;
+  font-family: "Alegreya", serif;
+  position: relative;
+  font-size: 8em;
+  font-weight: 300;
+  color: #1d1d1d;
+  z-index: 2;
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 1;
+  line-height: 1em;
+  z-index: 3;
+}
+
+.section::after {
+  content: "";
+  display: block;
+  width: 16.666vw;
+  position: absolute;
+  left: -100%;
+  bottom: 50%;
+  height: 5px;
+  background: #1d1d1d;
+}
