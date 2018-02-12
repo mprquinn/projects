@@ -9,8 +9,7 @@ class App extends Component {
     super();
 
     this.state = {
-      loaded: "loaded",
-      currentPage: 'landing',
+      currentSection: 'landing',
       pageAnimation: ''
     };
   }
@@ -49,20 +48,28 @@ class App extends Component {
     // this.loadImages();
   }
   componentDidMount() {
-    document.addEventListener("mousewheel", e => {
-      if (!this.state.animating) {
-        // this.changeSlide(this.determineDir(e.deltaY));
-      }
-    });
+    
   }
-  render() {
-    return (
-      <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentPage}`}>
+  renderSection(section) {
+    if (section === 'landing') {
+      return (
         <LandingScreen navigate={(e) => {
           this.navigate(e);
           }
         }/>
+      )
+    } else if (section === 'projects') {
+      return (
         <Projects />
+      )
+    }
+  }
+  render() {
+    return (
+      <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentPage}`}>
+        {
+          this.renderSection(this.state.currentSection)
+        }
       </div>
     );
   }

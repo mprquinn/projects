@@ -7,6 +7,7 @@ class Projects extends Component {
     super();
 
     this.state = {
+      loaded: "loaded",
       animating: false,
       animateDir: "",
       animateDuration: 600,
@@ -82,7 +83,11 @@ class Projects extends Component {
     }
   }
   componentDidMount() {
-
+    document.addEventListener("mousewheel", e => {
+      if (!this.state.animating) {
+        this.changeSlide(this.determineDir(e.deltaY));
+      }
+    });
   }
   render() {
     const currSlide = this.state.projects[this.state.currentSlide];
