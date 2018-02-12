@@ -35,6 +35,7 @@ body::after {
   background: rgba(0, 0, 0, 0.8);
   z-index: 1;
   /* backdrop-filter: saturate(80%) blur(2px); */
+  -webkit-backdrop-filter: saturate(80%) blur(5px);
   backdrop-filter: saturate(80%) blur(5px);
 }
 

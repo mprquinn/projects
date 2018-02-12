@@ -15,7 +15,6 @@ class LandingScreen extends Component {
     };
   }
   setActive(e) {
-    console.log(e.target);
     const width = e.target.getBoundingClientRect().width;
     const left = e.target.getBoundingClientRect().x;
     this.setState({
