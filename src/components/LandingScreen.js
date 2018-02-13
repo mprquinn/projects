@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Lines from "./Lines";
 import "../styles/landing.css";
 
 class LandingScreen extends Component {
@@ -20,20 +21,7 @@ class LandingScreen extends Component {
       <div
         className={this.state.loaded ? `landing landing--loaded` : "landing"}
       >
-        <div className="lines">
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-          <div className="line" />
-        </div>
+        <Lines />
 
         <div className="landing__card">
           <div className="landing__card__image-wrap">
@@ -44,7 +32,7 @@ class LandingScreen extends Component {
           </div>
 
           <div className="landing__card__text">
-            <h1 className="landing__card__title">Slide Title</h1>
+            <h1 className="landing__card__title">Section 01</h1>
             <h2 className="landing__card__subtitle">Subtitle</h2>
           </div>
         </div>

@@ -1,0 +1,56 @@
+/* decorative */
+.lines {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.line {
+  height: 100%;
+  border-right: 1px solid #333;
+  opacity: 0.3;
+  grid-column: 1 / span 1;
+  grid-row: 1 / -1;
+}
+
+.line:nth-of-type(1) {
+  grid-column: 1 / span 1;
+}
+.line:nth-of-type(2) {
+  grid-column: 2 / span 1;
+}
+.line:nth-of-type(3) {
+  grid-column: 3 / span 1;
+}
+.line:nth-of-type(4) {
+  grid-column: 4 / span 1;
+}
+.line:nth-of-type(5) {
+  grid-column: 5 / span 1;
+}
+.line:nth-of-type(6) {
+  grid-column: 6 / span 1;
+}
+.line:nth-of-type(7) {
+  grid-column: 7 / span 1;
+}
+.line:nth-of-type(8) {
+  grid-column: 8 / span 1;
+}
+.line:nth-of-type(9) {
+  grid-column: 9 / span 1;
+}
+.line:nth-of-type(10) {
+  grid-column: 10 / span 1;
+}
+.line:nth-of-type(11) {
+  grid-column: 11 / span 1;
+}
+.line:nth-of-type(12) {
+  grid-column: 12 / span 1;
+}

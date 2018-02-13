@@ -14,7 +14,7 @@ class App extends Component {
       currentSection: 'landing',
       pageAnimation: '',
       sectionTitles: {
-        landing: 'Mike Quinn',
+        landing: 'Title Here',
         projects: 'Projects'
       }
     };
