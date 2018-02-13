@@ -51,6 +51,7 @@ class App extends Component {
       });
     }, 1200);
   }
+  
   animateTitle() {
     const title = document.querySelector("h1.section");
     charming(title);
