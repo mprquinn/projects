@@ -52,6 +52,18 @@
   box-shadow: 0px 45px 65px -25px #6d5940;
   grid-column: 2 / 12;
   grid-row: 2 / 8;
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 1;
+}
+
+.site-wrap--out .project {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.site-wrap--in .project {
+  transform: translateY(50%);
+  opacity: 0;
 }
 
 @media screen and (min-width: 1080px) {

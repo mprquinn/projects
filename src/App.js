@@ -43,12 +43,12 @@ class App extends Component {
         currentSection: destination,
         pageAnimation: 'site-wrap--animated site-wrap--in'
       });
-    }, 300);
+    }, 600);
     window.setTimeout(() => {
       this.setState({
         pageAnimation: ''
       });
-    }, 600);
+    }, 1200);
   }
   componentWillMount() {
     // this.loadImages();
@@ -69,7 +69,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentPage}`}>
+      <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentSection}`}>
         <Navigation navigate={(e) => {this.navigate(e);}}/>
         <Section text={this.state.sectionTitles[this.state.currentSection]}/>
         {
