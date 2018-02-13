@@ -18,3 +18,9 @@
   grid-column: 2 / 12;
   grid-row: 2 / 8;
 }
+
+@media screen and (min-width: 1080px) {
+  .site-wrap__viewport {
+    grid-column: 3 / 11;
+  }
+}

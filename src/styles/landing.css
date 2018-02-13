@@ -44,7 +44,7 @@
   font-family: "Alegreya", serif;
   opacity: 1;
   transition: all 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transform: translateY(0);
+  transform: scale(1);
   transform-style: preserve-3d;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -61,12 +61,12 @@
 /*animations*/
 .site-wrap--out .landing__card {
   opacity: 0;
-  transform: translateY(-50%);
+  transform: scale(0.9);
 }
 
 .site-wrap--in .landing__card {
   opacity: 0;
-  transform: translateY(50%);
+  transform: scale(0.9);
 }
 
 .landing__card__image-wrap {
