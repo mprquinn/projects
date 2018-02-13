@@ -108,7 +108,6 @@
   transform: scale(0.9);
 }
 
-
 .project__details {
   position: relative;
   display: flex;
@@ -182,6 +181,11 @@
   flex: 1;
 }
 
+.project__nav__arrow--disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
 .project__nav__arrow::after {
   position: absolute;
   top: 0;
@@ -189,7 +193,7 @@
   bottom: 0;
   left: 50%;
   background: #1d1d1d;
-  content: '';
+  content: "";
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 

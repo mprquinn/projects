@@ -25,13 +25,21 @@ class Project extends Component {
         </div>
         <div className="project__nav">
           <span
-            className="project__nav__arrow project__nav__arrow--left"
+            className={
+              this.props.currentSlide <= 0
+                ? `project__nav__arrow project__nav__arrow--left project__nav__arrow--disabled`
+                : `project__nav__arrow project__nav__arrow--left`
+            }
             onClick={e => this.props.changeSlide("up")}
           >
             <img src={arrow} alt="Arrow Back" />
           </span>
           <span
-            className="project__nav__arrow project__nav__arrow--right"
+            className={
+              this.props.currentSlide === this.props.slideLength - 1
+                ? `project__nav__arrow project__nav__arrow--right project__nav__arrow--disabled`
+                : `project__nav__arrow project__nav__arrow--right`
+            }
             onClick={e => this.props.changeSlide("down")}
           >
             <img src={arrow} alt="Arrow Forward" />

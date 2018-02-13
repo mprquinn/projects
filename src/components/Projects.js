@@ -60,9 +60,6 @@ class Projects extends Component {
     if (dir === "down") {
       if (currentSlide < projects.length - 1) {
         this.fireAnims(1200);
-        this.setState({
-          animating: true
-        });
         window.setTimeout(() => {
           this.setState({
             currentSlide: currentSlide + 1
@@ -70,9 +67,6 @@ class Projects extends Component {
         }, 610);
       }
     } else {
-      this.setState({
-        animating: true
-      });
       if (currentSlide > 0) {
         this.fireAnims(1200);
         window.setTimeout(() => {
@@ -108,6 +102,8 @@ class Projects extends Component {
           animClass={this.state.animateDir}
           animating={this.state.animating}
           changeSlide={this.changeSlide}
+          currentSlide={this.state.currentSlide}
+          slideLength={this.state.projects.length}
         />
       </div>
     );
