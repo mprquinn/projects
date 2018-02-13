@@ -27,7 +27,8 @@ class LandingScreen extends Component {
           <div className="landing__card__image-wrap">
             <img
               src={require("../intro-bg.jpg")}
-              className="landing__card__image" alt="Mike Quinn - Front-End Developer"
+              className="landing__card__image"
+              alt="Mike Quinn - Front-End Developer"
             />
           </div>
 

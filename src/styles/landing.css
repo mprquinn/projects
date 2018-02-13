@@ -39,7 +39,7 @@
   box-shadow: 0px 45px 65px -25px #6d5940;
   font-family: "Alegreya", serif;
   opacity: 1;
-  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 1.2s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: translateY(0);
   transform-style: preserve-3d;
   grid-template-columns: repeat(4, 1fr);
@@ -55,9 +55,6 @@
 }
 
 /*animations*/
-.site-wrap--animated .landing__card {
-}
-
 .site-wrap--out .landing__card {
   opacity: 0;
   transform: translateY(-50%);

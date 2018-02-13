@@ -17,7 +17,8 @@ class Projects extends Component {
         {
           title: "Project One",
           imageUrl: "project1.jpg",
-          description: "Donec sodales, justo id condimentum facilisis, magna sapien volutpat nisl, non posuere tortor enim ut justo. Mauris id dolor et enim efficitur ultrices. Mauris ornare, turpis vitae placerat facilisis, lectus libero fermentum nibh, sed gravida sapien risus quis magna. Phasellus non blandit nunc. Cras et elit eu orci accumsan sollicitudin a a risus. Maecenas ipsum ex, pharetra at lacinia quis, eleifend et ligula. Suspendisse placerat arcu vel ipsum malesuada, at fermentum mauris posuere. Donec laoreet purus vitae turpis facilisis porta. Sed porta dictum augue sed feugiat. Morbi vitae semper nunc, in consequat nisl. Suspendisse potenti. Duis ac lacus gravida, eleifend ex quis, sollicitudin arcu. Vestibulum orci risus, aliquet ac efficitur non, venenatis vitae ex. Phasellus porta tempus massa eget sagittis. Vivamus justo leo, pulvinar id tempus eu, consequat in massa. Duis laoreet enim quis ultrices pharetra."
+          description:
+            "Donec sodales, justo id condimentum facilisis, magna sapien volutpat nisl, non posuere tortor enim ut justo. Mauris id dolor et enim efficitur ultrices. Mauris ornare, turpis vitae placerat facilisis, lectus libero fermentum nibh, sed gravida sapien risus quis magna. Phasellus non blandit nunc. Cras et elit eu orci accumsan sollicitudin a a risus. Maecenas ipsum ex, pharetra at lacinia quis, eleifend et ligula. Suspendisse placerat arcu vel ipsum malesuada, at fermentum mauris posuere. Donec laoreet purus vitae turpis facilisis porta. Sed porta dictum augue sed feugiat. Morbi vitae semper nunc, in consequat nisl. Suspendisse potenti. Duis ac lacus gravida, eleifend ex quis, sollicitudin arcu. Vestibulum orci risus, aliquet ac efficitur non, venenatis vitae ex. Phasellus porta tempus massa eget sagittis. Vivamus justo leo, pulvinar id tempus eu, consequat in massa. Duis laoreet enim quis ultrices pharetra."
         },
         {
           title: "Project Two",
@@ -31,6 +32,8 @@ class Projects extends Component {
         }
       ]
     };
+
+    this.changeSlide = this.changeSlide.bind(this);
   }
   fireAnims(duration) {
     // go
@@ -85,7 +88,7 @@ class Projects extends Component {
   componentDidMount() {
     document.addEventListener("mousewheel", e => {
       if (!this.state.animating) {
-        this.changeSlide(this.determineDir(e.deltaY));
+        // this.changeSlide(this.determineDir(e.deltaY));
       }
     });
   }
@@ -101,6 +104,7 @@ class Projects extends Component {
           description={currSlide.description}
           animClass={this.state.animateDir}
           animating={this.state.animating}
+          changeSlide={this.changeSlide}
         />
       </div>
     );

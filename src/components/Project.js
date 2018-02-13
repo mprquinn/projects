@@ -23,12 +23,18 @@ class Project extends Component {
           <div className="project__description">{this.props.description}</div>
         </div>
         <div className="project__nav">
-          <span className="project__nav__arrow project__nav__arrow--left">
-            <img src={require('../arrow.png')} alt=""/>
+          <span
+            className="project__nav__arrow project__nav__arrow--left"
+            onClick={e => this.props.changeSlide("up")}
+          >
+            <img src={require("../arrow.png")} alt="" />
           </span>
-          <span className="project__nav__arrow project__nav__arrow--right">
-            <img src={require('../arrow.png')} alt=""/>
-          </span>          
+          <span
+            className="project__nav__arrow project__nav__arrow--right"
+            onClick={e => this.props.changeSlide("down")}
+          >
+            <img src={require("../arrow.png")} alt="" />
+          </span>
         </div>
       </div>
     );
