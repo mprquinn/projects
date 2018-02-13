@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LandingScreen from './components/LandingScreen';
 import Section from './components/Section';
+import Navigation from './components/Navigation';
 import Projects from  './components/Projects';
 import "./styles/site-wrap.css";
 import "./styles/reset.css";
@@ -54,10 +55,7 @@ class App extends Component {
   renderSection(section) {
     if (section === 'landing') {
       return (
-        <LandingScreen navigate={(e) => {
-          this.navigate(e);
-          }
-        }/>
+        <LandingScreen />
       )
     } else if (section === 'projects') {
       return (
@@ -68,6 +66,7 @@ class App extends Component {
   render() {
     return (
       <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentPage}`}>
+        <Navigation navigate={(e) => {this.navigate(e);}}/>
         <Section />
         {
           this.renderSection(this.state.currentSection)

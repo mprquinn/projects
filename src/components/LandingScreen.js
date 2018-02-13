@@ -6,31 +6,13 @@ class LandingScreen extends Component {
     super();
 
     this.state = {
-      loaded: false,
-      activeOffset: {
-        width: '78.3',
-        left: '0'
-      }
+      loaded: false
     };
-  }
-  setActive(e) {
-    const width = e.target.getBoundingClientRect().width;
-    const left = e.target.getBoundingClientRect().x;
-    this.setState({
-      activeOffset: {
-        width,
-        left
-      }
-    });
   }
   componentDidMount() {
     //im sure this can be done better
-    const leftOffset = document.querySelector('.landing__nav__item--active a').getBoundingClientRect().x;
     this.setState({
       loaded: true,
-      activeOffset: {
-        left: leftOffset
-      }
     });
   }
   render() {
@@ -50,44 +32,6 @@ class LandingScreen extends Component {
           <div className="line" />
           <div className="line" />
         </div>
-
-        <ul className="landing__nav">
-          <span className="landing__nav__decorative" style={{left: `${this.state.activeOffset.left}px`, width: `${this.state.activeOffset.width}px`}}></span>
-          <li className="landing__nav__item landing__nav__item--active">
-            <a
-              href="landing"
-              onClick={e => {
-                e.preventDefault();
-                this.setActive(e);
-                this.props.navigate(e);
-              }}
-            >
-              Landing
-            </a>
-          </li>
-          <li className="landing__nav__item">
-            <a
-              href="projects"
-              onClick={e => {
-                e.preventDefault();
-                this.setActive(e);
-                this.props.navigate(e);
-              }}
-            >
-              Projects
-            </a>
-          </li>
-          <li className="landing__nav__item">
-          <a
-              href="projects"
-              onClick={e => {
-                e.preventDefault();
-                this.setActive(e);
-                this.props.navigate(e);
-              }}
-            >Contact</a>
-          </li>
-        </ul>
 
         <div className="landing__card">
           <div className="landing__card__image-wrap">
