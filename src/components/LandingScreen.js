@@ -12,12 +12,14 @@ class LandingScreen extends Component {
   componentDidMount() {
     //im sure this can be done better
     this.setState({
-      loaded: true,
+      loaded: true
     });
   }
   render() {
     return (
-      <div className={this.state.loaded ? `landing landing--loaded` : 'landing'}>
+      <div
+        className={this.state.loaded ? `landing landing--loaded` : "landing"}
+      >
         <div className="lines">
           <div className="line" />
           <div className="line" />

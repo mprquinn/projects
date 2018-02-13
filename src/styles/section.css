@@ -1,25 +1,25 @@
 .section {
   position: relative;
-  font-family: "Alegreya", serif;
   position: relative;
-  font-size: 8em;
-  font-weight: 300;
-  color: #1d1d1d;
   z-index: 2;
-  grid-column: 3 / span 2;
-  grid-row: 3 / span 1;
-  line-height: 1em;
   z-index: 3;
   margin-left: -0.6em;
+  color: #1d1d1d;
+  font-weight: 300;
+  font-size: 8em;
+  font-family: "Alegreya", serif;
+  line-height: 1em;
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 1;
 }
 
 .section::after {
-  content: "";
+  position: absolute;
+  bottom: -0.3em;
+  left: calc(-100% + 1.2em);
   display: block;
   width: 16.666vw;
-  position: absolute;
-  left: calc(-100% + 1.2em);
-  bottom: -0.3em;
   height: 5px;
   background: #1d1d1d;
+  content: "";
 }

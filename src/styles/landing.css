@@ -2,83 +2,29 @@
   display: grid;
   width: 100%;
   height: 100vh;
-  grid-template-columns: repeat(12, 8.333vw);
-  grid-template-rows: repeat(8, 12.5vh);
   background: #efefef;
   background-size: cover;
+  grid-template-columns: repeat(12, 8.333vw);
+  grid-template-rows: repeat(8, 12.5vh);
 }
 
 .landing::after {
-  content: "";
-  display: block;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  display: block;
   background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  content: "";
   opacity: 0.6;
-}
-
-.landing__nav {
-  display: flex;
-  position: fixed;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding-right: 16.666vw;
-  position: relative;
-  grid-column: 3 / -1;
-  grid-row: 1 / 2;
-  z-index: 2;
-  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-  opacity: 0;
-}
-
-.landing--loaded .landing__nav {
-  opacity: 1;
-}
-
-.landing__nav__decorative {
-  position: fixed;
-  width: 0;
-  left: 0;
-  margin-top: -0.5em;
-  height: 3px;
-  background: #1d1d1d;
-  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.landing__nav__item {
-  display: inline-block;
-  font-size: 1em;
-  line-height: 1em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Alegreya Sans', sans-serif;
-  font-weight: 800;
-  width: 16.666vw;
-  margin-bottom: 1em;
-  text-align: left;
-}
-
-@media screen and (min-width: 1080px) {
-  .landing__nav__item {
-    width: 8.333vw;
-    text-align: right;
-  }
-}
-
-.landing__nav__item a {
-  color: #1d1d1d;
-  text-decoration: none;
 }
 
 @media screen and (min-width: 1080px) {
   .landing__section::after {
+    position: relative;
     bottom: 0em;
     left: -8.333vw;
-    position: relative;
   }
 }
 
@@ -90,12 +36,9 @@
 
 .landing__card {
   position: relative;
+  z-index: 2;
   display: grid;
-  font-family: "Alegreya", serif;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column: 2 / 12;
-  grid-row: 2 / 8;
+  background: #fff;
   background-image: linear-gradient(
     to top,
     #d5d4d0 0%,
@@ -105,9 +48,12 @@
     #e9e9e7 100%
   );
   background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  background: #fff;
   box-shadow: 0px 45px 65px -25px #6d5940;
-  z-index: 2;
+  font-family: "Alegreya", serif;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column: 2 / 12;
+  grid-row: 2 / 8;
 }
 @media screen and (min-width: 1080px) {
   .landing__card {
@@ -117,9 +63,9 @@
 }
 .landing__card__image-wrap {
   position: relative;
+  overflow: hidden;
   grid-column: 1 / -1;
   grid-row: 1 / 3;
-  overflow: hidden;
 }
 @media screen and (min-width: 1080px) {
   .landing__card__image-wrap {
@@ -134,11 +80,11 @@
 .landing__card__text {
   display: flex;
   flex-direction: column;
+  border: 1em solid #c7beb9;
   grid-column: 1 / -1;
   grid-row: 3 / 5;
   justify-content: center;
   align-items: center;
-  border: 1em solid #c7beb9;
 }
 @media screen and (min-width: 1080px) {
   .landing__card__text {
@@ -147,65 +93,65 @@
   }
 }
 .landing__card__title {
-  font-size: 3em;
-  font-weight: 500;
-  color: #1d1d1d;
-  letter-spacing: 0.05em;
   margin-bottom: 0;
+  color: #1d1d1d;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-size: 3em;
 }
 .landing__card__subtitle {
   position: relative;
-  font-size: 1.5em;
-  font-weight: 300;
-  color: #333333;
   margin-top: 0;
+  color: #333333;
   text-transform: none;
   letter-spacing: 0.05em;
+  font-weight: 300;
+  font-size: 1.5em;
 }
 .landing__card__subtitle::before {
-  content: "";
-  width: 55%;
-  height: 2px;
-  background: #1d1d1d;
   position: absolute;
   top: 50%;
   left: -80%;
-}
-.landing__card__subtitle::after {
-  content: "";
   width: 55%;
   height: 2px;
   background: #1d1d1d;
+  content: "";
+}
+.landing__card__subtitle::after {
   position: absolute;
   top: 50%;
   right: -80%;
+  width: 55%;
+  height: 2px;
+  background: #1d1d1d;
+  content: "";
 }
 .landing__card__image {
   position: absolute;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
 }
 
 /* decorative */
 .lines {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   z-index: 1;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .line {
   height: 100%;
-  grid-column: 1 / span 1;
-  grid-row: 1 / -1;
   border-right: 1px solid #333;
   opacity: 0.3;
+  grid-column: 1 / span 1;
+  grid-row: 1 / -1;
 }
 
 .line:nth-of-type(1) {

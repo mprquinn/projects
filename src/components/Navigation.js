@@ -7,8 +7,8 @@ class Navigation extends Component {
 
     this.state = {
       activeOffset: {
-        width: '78.3',
-        left: '0'
+        width: "78.3",
+        left: "0"
       }
     };
   }
@@ -23,7 +23,9 @@ class Navigation extends Component {
     });
   }
   componentDidMount() {
-    const leftOffset = document.querySelector('.nav__item--active a').getBoundingClientRect().x;
+    const leftOffset = document
+      .querySelector(".nav__item--active a")
+      .getBoundingClientRect().x;
     this.setState({
       activeOffset: {
         left: leftOffset
@@ -33,43 +35,51 @@ class Navigation extends Component {
   render() {
     return (
       <ul className="nav">
-          <span className="nav__decorative" style={{left: `${this.state.activeOffset.left}px`, width: `${this.state.activeOffset.width}px`}}></span>
-          <li className="nav__item nav__item--active">
-            <a
-              href="landing"
-              onClick={e => {
-                e.preventDefault();
-                this.setActive(e);
-                this.props.navigate(e);
-              }}
-            >
-              Landing
-            </a>
-          </li>
-          <li className="nav__item">
-            <a
-              href="projects"
-              onClick={e => {
-                e.preventDefault();
-                this.setActive(e);
-                this.props.navigate(e);
-              }}
-            >
-              Projects
-            </a>
-          </li>
-          <li className="nav__item">
+        <span
+          className="nav__decorative"
+          style={{
+            left: `${this.state.activeOffset.left}px`,
+            width: `${this.state.activeOffset.width}px`
+          }}
+        />
+        <li className="nav__item nav__item--active">
           <a
-              href="projects"
-              onClick={e => {
-                e.preventDefault();
-                this.setActive(e);
-                this.props.navigate(e);
-              }}
-            >Contact</a>
-          </li>
-        </ul>
-    )
+            href="landing"
+            onClick={e => {
+              e.preventDefault();
+              this.setActive(e);
+              this.props.navigate(e);
+            }}
+          >
+            Landing
+          </a>
+        </li>
+        <li className="nav__item">
+          <a
+            href="projects"
+            onClick={e => {
+              e.preventDefault();
+              this.setActive(e);
+              this.props.navigate(e);
+            }}
+          >
+            Projects
+          </a>
+        </li>
+        <li className="nav__item">
+          <a
+            href="projects"
+            onClick={e => {
+              e.preventDefault();
+              this.setActive(e);
+              this.props.navigate(e);
+            }}
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    );
   }
 }
 
