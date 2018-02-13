@@ -7,9 +7,7 @@ class Section extends Component {
   }
   render() {
     return (
-      <div>
-        <h1 className="section">.01</h1>
-      </div>
+      <h1 class="section">.01</h1>
     )
   }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Section from './Section';
 import "../styles/landing.css";
 
 class LandingScreen extends Component {
@@ -89,8 +88,6 @@ class LandingScreen extends Component {
             >Contact</a>
           </li>
         </ul>
-
-        <Section />
 
         <div className="landing__card">
           <div className="landing__card__image-wrap">

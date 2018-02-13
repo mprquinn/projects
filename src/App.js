@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import LandingScreen from './components/LandingScreen';
+import Section from './components/Section';
 import Projects from  './components/Projects';
 import "./styles/site-wrap.css";
 import "./styles/reset.css";
@@ -67,6 +68,7 @@ class App extends Component {
   render() {
     return (
       <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentPage}`}>
+        <Section />
         {
           this.renderSection(this.state.currentSection)
         }
