@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "../styles/lines.css";
 
 class Lines extends Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <div className="lines">

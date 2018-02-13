@@ -47,6 +47,7 @@ class Navigation extends Component {
             href="landing"
             onClick={e => {
               e.preventDefault();
+              this.props.animateTitle();
               this.setActive(e);
               this.props.navigate(e);
             }}
@@ -59,6 +60,7 @@ class Navigation extends Component {
             href="projects"
             onClick={e => {
               e.preventDefault();
+              this.props.animateTitle();
               this.setActive(e);
               this.props.navigate(e);
             }}

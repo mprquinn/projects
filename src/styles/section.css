@@ -8,7 +8,7 @@
   font-weight: 300;
   font-size: 8em;
   font-family: "Alegreya", serif;
-  line-height: 1em;
+  line-height: 1.3em;
   grid-column: 3 / span 3;
   grid-row: 3 / span 1;
 }
@@ -22,4 +22,55 @@
   height: 5px;
   background: #1d1d1d;
   content: "";
+}
+
+/*charming + animations*/
+
+.section span {
+  display: inline-block;
+  line-height: 1.3em;
+  transform: translateY(0%);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 1;
+}
+
+.site-wrap--out .section span {
+  transform: translateY(-10%);
+  opacity: 0;
+}
+
+.site-wrap--in .section span {
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+.char1 {
+  transition-delay: 0s !important;
+}
+.char2 {
+  transition-delay: 0.1s !important;
+}
+.char3 {
+  transition-delay: 0.2s !important;
+}
+.char4 {
+  transition-delay: 0.3s !important;
+}
+.char5 {
+  transition-delay: 0.4s !important;
+}
+.char6 {
+  transition-delay: 0.5s !important;
+}
+.char7 {
+  transition-delay: 0.6s !important;
+}
+.char8 {
+  transition-delay: 0.7s !important;
+}
+.char9 {
+  transition-delay: 0.8s !important;
+}
+.char10 {
+  transition-delay: 0.9s !important;
 }

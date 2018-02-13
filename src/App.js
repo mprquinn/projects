@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import LandingScreen from './components/LandingScreen';
-import Section from './components/Section';
-import Navigation from './components/Navigation';
-import Projects from  './components/Projects';
+import LandingScreen from "./components/LandingScreen";
+import Section from "./components/Section";
+import Navigation from "./components/Navigation";
+import Projects from "./components/Projects";
+import charming from "charming";
 import "./styles/site-wrap.css";
 import "./styles/reset.css";
 
@@ -11,11 +12,11 @@ class App extends Component {
     super();
 
     this.state = {
-      currentSection: 'landing',
-      pageAnimation: '',
+      currentSection: "landing",
+      pageAnimation: "",
       sectionTitles: {
-        landing: 'Title Here',
-        projects: 'Projects'
+        landing: "Hello,",
+        projects: "Projects"
       }
     };
   }
@@ -34,47 +35,55 @@ class App extends Component {
     });
   }
   navigate(e) {
-    const destination = e.target.getAttribute('href');
+    const destination = e.target.getAttribute("href");
     this.setState({
-      pageAnimation: 'site-wrap--animated site-wrap--out'
-    })
+      pageAnimation: "site-wrap--animated site-wrap--out"
+    });
     window.setTimeout(() => {
       this.setState({
         currentSection: destination,
-        pageAnimation: 'site-wrap--animated site-wrap--in'
+        pageAnimation: "site-wrap--animated site-wrap--in"
       });
     }, 600);
     window.setTimeout(() => {
       this.setState({
-        pageAnimation: ''
+        pageAnimation: ""
       });
     }, 1200);
   }
-  componentWillMount() {
-    // this.loadImages();
+  animateTitle() {
+    const title = document.querySelector("h1.section");
+    charming(title);
   }
+  componentWillMount() {}
   componentDidMount() {
-    
+    const title = document.querySelector('.section');
+    charming(title);
   }
   renderSection(section) {
-    if (section === 'landing') {
-      return (
-        <LandingScreen />
-      )
-    } else if (section === 'projects') {
-      return (
-        <Projects />
-      )
+    if (section === "landing") {
+      return <LandingScreen />;
+    } else if (section === "projects") {
+      return <Projects />;
     }
   }
   render() {
     return (
-      <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentSection}`}>
-        <Navigation navigate={(e) => {this.navigate(e);}}/>
-        <Section text={this.state.sectionTitles[this.state.currentSection]}/>
-        {
-          this.renderSection(this.state.currentSection)
-        }
+      <div
+        className={`site-wrap ${this.state.pageAnimation} site-wrap--${
+          this.state.currentSection
+        }`}
+      >
+        <Navigation
+          navigate={e => {
+            this.navigate(e);
+          }}
+          animateTitle={e => {
+            this.animateTitle();
+          }}
+        />
+        <Section text={this.state.sectionTitles[this.state.currentSection]} />
+        {this.renderSection(this.state.currentSection)}
       </div>
     );
   }

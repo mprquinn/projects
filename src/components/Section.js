@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import charming from "charming";
 import "../styles/section.css";
 
 class Section extends Component {
-  constructor() {
-    super();
+  componentDidUpdate() {
+    console.log('component updated');
+    const title = document.querySelector(".section");
+    charming(title);
   }
   render() {
-    return <h1 class="section">{this.props.text}</h1>;
+    return <h1 className="section">{this.props.text}</h1>;
   }
 }
 
