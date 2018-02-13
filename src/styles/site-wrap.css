@@ -4,6 +4,7 @@
   display: grid;
   width: 100%;
   height: 100vh;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
   grid-template-columns: repeat(12, 8.333vw);
   grid-template-rows: repeat(8, 12.5vh);
 }

@@ -29,19 +29,19 @@
 .section span {
   display: inline-block;
   line-height: 1.3em;
-  transform: translateY(0%);
-  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   opacity: 1;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateY(0%);
 }
 
 .site-wrap--out .section span {
-  transform: translateY(-10%);
   opacity: 0;
+  transform: translateY(-10%);
 }
 
 .site-wrap--in .section span {
-  transform: translateY(50%);
   opacity: 0;
+  transform: translateY(50%);
 }
 
 .char1 {
