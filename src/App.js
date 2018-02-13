@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LandingScreen from "./components/LandingScreen";
 import Section from "./components/Section";
+import Lines from "./components/Lines";
 import Navigation from "./components/Navigation";
 import Projects from "./components/Projects";
 import charming from "charming";
@@ -75,6 +76,7 @@ class App extends Component {
           this.state.currentSection
         }`}
       >
+        <Lines />
         <Navigation
           navigate={e => {
             this.navigate(e);
@@ -84,7 +86,10 @@ class App extends Component {
           }}
         />
         <Section text={this.state.sectionTitles[this.state.currentSection]} />
+        <div className="site-wrap__viewport">
         {this.renderSection(this.state.currentSection)}
+        </div>
+        
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Lines from "./Lines";
 import "../styles/landing.css";
 
 class LandingScreen extends Component {
@@ -21,8 +20,6 @@ class LandingScreen extends Component {
       <div
         className={this.state.loaded ? `landing landing--loaded` : "landing"}
       >
-        <Lines />
-
         <div className="landing__card">
           <div className="landing__card__image-wrap">
             <img

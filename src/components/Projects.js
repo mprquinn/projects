@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Project from "./Project";
-import Lines from "./Lines";
 import "../styles/project.css";
 
 class Projects extends Component {
@@ -97,7 +96,6 @@ class Projects extends Component {
     const currentImage = require(`../${currSlide.imageUrl}`);
     return (
       <div className={`projects projects--${this.state.loaded}`}>
-        <Lines />
         <Project
           title={currSlide.title}
           image={currSlide.imageUrl}
