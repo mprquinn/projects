@@ -19,6 +19,15 @@
   grid-row: 2 / 8;
 }
 
+.site-wrap__viewport > * {
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.site-wrap__viewport--loaded > * {
+  opacity: 1;
+}
+
 @media screen and (min-width: 1080px) {
   .site-wrap__viewport {
     grid-column: 3 / 11;

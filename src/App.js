@@ -13,6 +13,7 @@ class App extends Component {
     super();
 
     this.state = {
+      loaded: false,
       currentSection: "landing",
       pageAnimation: "",
       sectionTitles: {
@@ -52,15 +53,20 @@ class App extends Component {
       });
     }, 1200);
   }
-  
+
   animateTitle() {
     const title = document.querySelector("h1.section");
     charming(title);
   }
   componentWillMount() {}
-  componentDidMount() {
-    const title = document.querySelector('.section');
+  animateTitle() {
+    const title = document.querySelector(".section");
     charming(title);
+  }
+  componentDidMount() {
+    this.setState({
+      loaded: true
+    });
   }
   renderSection(section) {
     if (section === "landing") {
@@ -86,10 +92,16 @@ class App extends Component {
           }}
         />
         <Section text={this.state.sectionTitles[this.state.currentSection]} />
-        <div className="site-wrap__viewport">
-        {this.renderSection(this.state.currentSection)}
+
+        <div
+          className={
+            this.state.loaded
+              ? `site-wrap__viewport site-wrap__viewport--loaded`
+              : `site-wrap__viewport`
+          }
+        >
+          {this.renderSection(this.state.currentSection)}
         </div>
-        
       </div>
     );
   }
