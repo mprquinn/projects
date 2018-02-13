@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import arrow from '../arrow.png';
 
 class Project extends Component {
   componentDidMount() {}
@@ -27,13 +28,13 @@ class Project extends Component {
             className="project__nav__arrow project__nav__arrow--left"
             onClick={e => this.props.changeSlide("up")}
           >
-            <img src={require("../arrow.png")} alt="" />
+            <img src={arrow} alt="" />
           </span>
           <span
             className="project__nav__arrow project__nav__arrow--right"
             onClick={e => this.props.changeSlide("down")}
           >
-            <img src={require("../arrow.png")} alt="" />
+            <img src={arrow} alt="" />
           </span>
         </div>
       </div>
