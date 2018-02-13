@@ -6,7 +6,7 @@ class Section extends Component {
     super();
   }
   render() {
-    return <h1 class="section">.01</h1>;
+    return <h1 class="section">{this.props.text}</h1>;
   }
 }
 

@@ -2,8 +2,6 @@
   display: grid;
   width: 100%;
   height: 100vh;
-  background: #efefef;
-  background-size: cover;
   grid-template-columns: repeat(12, 8.333vw);
   grid-template-rows: repeat(8, 12.5vh);
 }

@@ -12,7 +12,11 @@ class App extends Component {
 
     this.state = {
       currentSection: 'landing',
-      pageAnimation: ''
+      pageAnimation: '',
+      sectionTitles: {
+        landing: 'Mike Quinn',
+        projects: 'Projects'
+      }
     };
   }
   loadImages() {
@@ -36,7 +40,7 @@ class App extends Component {
     })
     window.setTimeout(() => {
       this.setState({
-        currentPage: destination,
+        currentSection: destination,
         pageAnimation: 'site-wrap--animated site-wrap--in'
       });
     }, 300);
@@ -67,7 +71,7 @@ class App extends Component {
     return (
       <div className={`site-wrap ${this.state.pageAnimation} site-wrap--${this.state.currentPage}`}>
         <Navigation navigate={(e) => {this.navigate(e);}}/>
-        <Section />
+        <Section text={this.state.sectionTitles[this.state.currentSection]}/>
         {
           this.renderSection(this.state.currentSection)
         }
