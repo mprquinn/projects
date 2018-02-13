@@ -17,8 +17,7 @@ class Projects extends Component {
         {
           title: "Project One",
           imageUrl: "project1.jpg",
-          description:
-            "This is the first project and it has a cool description."
+          description: "Donec sodales, justo id condimentum facilisis, magna sapien volutpat nisl, non posuere tortor enim ut justo. Mauris id dolor et enim efficitur ultrices. Mauris ornare, turpis vitae placerat facilisis, lectus libero fermentum nibh, sed gravida sapien risus quis magna. Phasellus non blandit nunc. Cras et elit eu orci accumsan sollicitudin a a risus. Maecenas ipsum ex, pharetra at lacinia quis, eleifend et ligula. Suspendisse placerat arcu vel ipsum malesuada, at fermentum mauris posuere. Donec laoreet purus vitae turpis facilisis porta. Sed porta dictum augue sed feugiat. Morbi vitae semper nunc, in consequat nisl. Suspendisse potenti. Duis ac lacus gravida, eleifend ex quis, sollicitudin arcu. Vestibulum orci risus, aliquet ac efficitur non, venenatis vitae ex. Phasellus porta tempus massa eget sagittis. Vivamus justo leo, pulvinar id tempus eu, consequat in massa. Duis laoreet enim quis ultrices pharetra."
         },
         {
           title: "Project Two",
