@@ -60,6 +60,9 @@ class Projects extends Component {
     if (dir === "down") {
       if (currentSlide < projects.length - 1) {
         this.fireAnims(1200);
+        this.setState({
+          animating: true
+        });
         window.setTimeout(() => {
           this.setState({
             currentSlide: currentSlide + 1
@@ -67,6 +70,9 @@ class Projects extends Component {
         }, 610);
       }
     } else {
+      this.setState({
+        animating: true
+      });
       if (currentSlide > 0) {
         this.fireAnims(1200);
         window.setTimeout(() => {
@@ -93,7 +99,6 @@ class Projects extends Component {
   }
   render() {
     const currSlide = this.state.projects[this.state.currentSlide];
-    const currentImage = require(`../${currSlide.imageUrl}`);
     return (
       <div className={`projects projects--${this.state.loaded}`}>
         <Project
